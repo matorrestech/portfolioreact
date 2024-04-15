@@ -3,8 +3,6 @@ import React from "react"
 import logo from "../../assets/logo-mt-horizontal.svg"
 
 export default function Start() {
-    let asA = "As a "
-
     return (
         <section
             className="
@@ -92,7 +90,7 @@ export default function Start() {
                     className="
                         sm:text-lg"
                 >
-                    {asA}
+                    As a&nbsp;
                     <span
                         className="
                             font-semibold text-xl"

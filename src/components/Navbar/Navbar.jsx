@@ -5,6 +5,7 @@ import hamburger from "../../assets/icon-menu-hamburger.svg"
 import closeIcon from "../../assets/icon-menu-close.svg"
 import flagBr from "../../assets/flag-br.png"
 import flagUk from "../../assets/flag-uk.png"
+import MobileLink from "./MobileLink"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -16,7 +17,7 @@ export default function Navbar() {
     return (
         <nav
             className="
-                flex justify-between items-center bg-navyBlue fixed w-full text-beige h-12 px-3 mt-0
+                flex justify-between items-center bg-navyBlue fixed w-full text-beige h-12 px-3 mt-0 z-50 
                 sm:h-16"
         >
             <div className="flex">
@@ -30,7 +31,7 @@ export default function Navbar() {
                 <p
                     className="
                         font-sm font-thin pt-1 px-1
-                        sm:text-xl"
+                        sm:text-2xl"
                 >
                     MATHEUS <span className="font-semibold">TORRES</span>
                 </p>
@@ -45,55 +46,45 @@ export default function Navbar() {
             {isOpen && (
                 <div
                     className="
-                        fixed top-12 right-0 w-full h-full bg-navyBlue text-beige sm:top-16
-                        sm:text-lg"
+                        fixed top-12 right-0 w-full h-full bg-navyBlue text-beige 
+                        sm:top-16 sm:text-2xl"
                 >
-                    <a
-                        href="#"
-                        className="
-                            px-4 py-4 mt-4 hover:bg-beige hover:text-navyBlue hover:font-medium w-full flex justify-center"
-                    >
-                        <span
-                            className="
-                                px-2"
-                        >
-                            SKILLS
-                        </span>
-                    </a>
-                    <a
-                        href="#"
-                        className="
-                            px-4 py-4 hover:bg-beige hover:text-navyBlue hover:font-medium w-full flex justify-center"
-                    >
-                        ABOUT ME
-                    </a>
-                    <a
-                        href="#"
-                        className="
-                            px-4 py-4 hover:bg-beige hover:text-navyBlue hover:font-medium w-full flex justify-center"
-                    >
-                        PROJECTS
-                    </a>
-                    <a
-                        href="#"
-                        className="
-                            px-4 py-4 hover:bg-beige hover:text-navyBlue hover:font-medium w-full flex justify-center"
-                    >
-                        CONTACTS
-                    </a>
-                    <a
-                        href="#"
-                        className="
-                            px-4 py-4 hover:bg-beige hover:text-navyBlue hover:font-medium w-full flex justify-center"
-                    >
-                        DOWNLOAD CV
-                    </a>
+                    <MobileLink link="#home" text="HOME" click={toggleMenu} />
+
+                    <MobileLink
+                        link="#skills"
+                        text="SKILLS"
+                        click={toggleMenu}
+                    />
+
+                    <MobileLink
+                        link="#aboutMe"
+                        text="ABOUT ME"
+                        click={toggleMenu}
+                    />
+
+                    <MobileLink
+                        link="#projects"
+                        text="PROJECTS"
+                        click={toggleMenu}
+                    />
+
+                    <MobileLink
+                        link="#contacts"
+                        text="CONTACTS"
+                        click={toggleMenu}
+                    />
+
+                    <MobileLink
+                        link="#"
+                        text="DOWNLOAD CV"
+                        click={toggleMenu}
+                    />
 
                     <hr
                         className="
                             my-5 mx-4"
                     />
-
                     <div
                         className="
                             mt-7 flex w-full justify-center items-center"
@@ -101,7 +92,8 @@ export default function Navbar() {
                         <a
                             href="#"
                             className="
-                                flex justify-center items-center px-3 hover:bg-beige hover:text-navyBlue"
+                                flex justify-center items-center px-3 hover:bg-beige hover:text-navyBlue hover:font-medium"
+                            onClick={toggleMenu}
                         >
                             <img
                                 src={flagBr}
@@ -116,7 +108,8 @@ export default function Navbar() {
                         <a
                             href="#"
                             className="
-                                flex justify-center items-center px-3 hover:bg-beige hover:text-navyBlue"
+                                flex justify-center items-center px-3 hover:bg-beige hover:text-navyBlue hover:font-medium"
+                            onClick={toggleMenu}
                         >
                             <img
                                 src={flagUk}
